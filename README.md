@@ -12,7 +12,7 @@ https://www.raspberrypi.com/products/camera-module-3/ (should be: wide lens, wit
 
 https://www.raspberrypi.com/products/camera-cable/ (22 to 15 pin camera cable, also available short cables on amazon) (PI shop)
 
-HC-SR501 PIR Infrared Sensor or compatible from Arduino or any 5V (amazon, aliexpress)
+HC-SR501 PIR Infrared Sensor or compatible from Arduino or any 5V 3 pins: +5V, signal pin, Ground (amazon, aliexpress)
 
 30x10mm (or any) Blower Fan 5V 3 pins: +5V, control pin, Ground (this is very important, board will be not stable if fan is missing) (amazon, aliexpress)
 
@@ -76,7 +76,7 @@ sudo reboot - daily
 DC 5v fan with 3 pin or compatible with any 3 wire 5v control board +5V, GPIO control pin (17), Ground
 
 # PIR sensor:
-compatible PIR sensor has 3 wires +5V, GPIO control pin (4), Ground
+compatible PIR sensor has 3 wires +5V, GPIO signal pin (4), Ground
 
 PIR senso has 2 potentiometers: 1 - detection sensitivity, 2 - sensor on duration, set comfortable sensitivity and minimum sensor on duration
 
