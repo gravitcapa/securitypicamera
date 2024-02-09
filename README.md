@@ -10,7 +10,7 @@ https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/ (with GPIO pins sold
 
 https://www.raspberrypi.com/products/camera-module-3/ (should be: wide lens, with an infrared filter) (PI shop)
 
-https://www.raspberrypi.com/products/camera-cable/ (22 to 15 pin camera cable, also available short cables on amazon) (PI shop)
+https://www.raspberrypi.com/products/camera-cable/ (22 to 15 pin camera cable, also available short cables on amazon) (PI shop, amazon, aliexpress)
 
 HC-SR501 PIR Infrared Sensor or compatible from Arduino or any 5V 3 pins: +5V, signal pin, Ground (amazon, aliexpress)
 
@@ -23,6 +23,8 @@ box (amazon, aliexpress)
 mounting leg (amazon, aliexpress)
 
 Micro SD fast - A2 speed (amazon, costco - sandisk, amazon basics 128Gb or more)
+
+Micro usb to USB cable (any dollarama)
 
 # Micro SD card folders:
 
