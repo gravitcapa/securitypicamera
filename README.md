@@ -16,11 +16,11 @@ HC-SR501 PIR Infrared Sensor or compatible from Arduino or any 5V 3 pins: +5V, s
 
 30x10mm (or any) Blower Fan 5V 3 pins: +5V, control pin, Ground (this is very important, board will be not stable if fan is missing) (amazon, aliexpress)
 
-install compatible heatsink (amazon, aliexpress, PI shop)
+install compatible CPU heatsink (amazon, aliexpress, PI shop)
 
-box (amazon, aliexpress)
+box (amazon, aliexpress or 3D printed)
 
-mounting leg (amazon, aliexpress)
+mounting leg (amazon, aliexpress or 3D printed)
 
 Micro SD fast - A2 speed (amazon, costco - sandisk, amazon basics 128Gb or more)
 
