@@ -176,7 +176,7 @@ git clone (project)
 
 # Update python libs
 
-Update python dependencies, cold be more, please check errors if missing something
+Update python dependencies, could be more, please check errors if missing something
 
 boto3, ffmpeg, picamera2
 
