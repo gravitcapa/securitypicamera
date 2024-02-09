@@ -1,0 +1,1 @@
+/videos - local captured videos folder, but not uploaded
