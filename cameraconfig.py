@@ -88,7 +88,7 @@ maxmse = 20.0
 startfantemp = 43.0
 
 # fan OFF CPU temperature
-stopfantemp = 40.0
+stopfantemp = 39.0
 
 # max CPU temperature to stop upload
 maxcputemp = 45.0
