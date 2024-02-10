@@ -91,13 +91,15 @@ DC 5v fan with 3 pin or compatible with any 3 wire 5v control board +5V, GPIO co
 # PIR sensor:
 compatible PIR sensor has 3 wires +5V, GPIO signal pin (4), Ground
 
-PIR senso has 2 potentiometers: 1 - detection sensitivity, 2 - sensor on duration, set comfortable sensitivity and minimum sensor on duration
+PIR sensor has 2 potentiometers: 1 - detection sensitivity, 2 - sensor on duration, set comfortable sensitivity and minimum sensor on duration
 
 # Raspberry PI settings
 
 Install Raspberry Pi OS (Lite) using Raspberry Pi Imager on SD Card enable SSH and set password
 
-On Raspberry pi zero 2 only Lite OS version works stable due to low memory
+https://www.raspberrypi.com/software/
+
+On Raspberry pi zero 2 w only Lite OS version works stable due to low memory
 
 insert sd card into Raspberry Pi attach power supply to correct micro usb port
 
@@ -132,6 +134,9 @@ sudo apt-get upgrade
 sudo apt-get update
 
 # AWS S3 Cloud Storage Config
+
+https://aws.amazon.com/console/
+
 Setup AWS API user what has permissions to write to S3 using this policy
 
 open AWS Console, IAM -> Policies -> create new policy 'Cameras' using this JSON
