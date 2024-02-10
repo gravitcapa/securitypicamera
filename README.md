@@ -72,10 +72,14 @@ cleanup.py - daily
 sudo reboot - daily
 
 sudo crontab -e
+
 @reboot cd /home/ozzy/camera/ && python3 fan.py
+
 @reboot cd /home/ozzy/camera/ && python3 camera.py
+
 */5 * * * * cd /home/ozzy/camera/ && python3 s3syncv2.py
-0 * * * * cd /home/ozzy/camera/ && python3 cleanup.py.py
+
+0 * * * * cd /home/ozzy/camera/ && python3 cleanup.py
 
 # Fan:
 
