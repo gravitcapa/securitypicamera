@@ -4,6 +4,10 @@ Raspberry pi zero 2 w with a camera module 3 security system
 supports cloud upload to AWS S3 and direct MP4 encoding on the board,
 fan control and storage cleanup
 
+![GitHub Image](/images/camera1.jpg)
+![GitHub Image](/images/camera2.jpg)
+![GitHub Image](/images/camera3.jpg)
+
 # Hardware:
 
 https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/ (with GPIO pins soldered) (PI shop)
