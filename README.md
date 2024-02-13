@@ -92,6 +92,10 @@ sudo crontab -e
 
 DC 5v fan with 3 pin or compatible with any 3 wire 5v control board +5V, GPIO control pin (17), Ground
 
+or with DIY controller like this 3 pin to 2 pin fan
+
+![GitHub Image](/images/FAN control 3 pin.PNG)
+
 # PIR sensor:
 compatible PIR sensor has 3 wires +5V, GPIO signal pin (4), Ground
 
