@@ -94,7 +94,7 @@ DC 5v fan with 3 pin or compatible with any 3 wire 5v control board +5V, GPIO co
 
 or with DIY controller like this 3 pin to 2 pin fan
 
-![GitHub Image]('/images/FANcontrol3pin.PNG')
+![GitHub Image](images/FANcontrol3pin.PNG)
 
 # PIR sensor:
 compatible PIR sensor has 3 wires +5V, GPIO signal pin (4), Ground
