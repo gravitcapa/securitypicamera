@@ -34,10 +34,10 @@ aws_region = 'ca-central-1'
 #AWS S3 bucket, it's recomended to setup Lifecycle rules for a bucket with a automated cleanup after X days
 aws_s3_bucket_name = 'homecameras'
 #AWS bucket's folder for camera recordings, bucket can have many folders for all yours cameras, better to keep recordings in separate folders
-aws_s3_bucket_folder = '68camera1'
+aws_s3_bucket_folder = 'camera1'
 
 #camera name
-cam_name = '68cam1'
+cam_name = 'cam1'
 
 # application log folder
 log_folder = 'log/'
