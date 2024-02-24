@@ -26,18 +26,18 @@
 # open S3 bucket -> Management -> Lifecycle rules -> Create Lifecycle rule, specify name, check box expire current versions after X days, this will automaticaly delete old files after X days
 
 #AWS API your user access key
-aws_access_key_id = 'MYKEY-REPLACE'
+aws_access_key_id = 'AKIAW66AMQNJ45CZ2XXL'
 #AWS API your user secret
-aws_secret_access_key = 'MYSECRET-REPLACE'
-#AWS region for example ca-central-1
-aws_region = 'MYREGION-REPLACE'
+aws_secret_access_key = 'IJN86HBCz3W9fWodHmASuwaxnOWDDxCTalwcLZjk'
+#AWS region
+aws_region = 'ca-central-1'
 #AWS S3 bucket, it's recomended to setup Lifecycle rules for a bucket with a automated cleanup after X days
 aws_s3_bucket_name = 'homecameras'
 #AWS bucket's folder for camera recordings, bucket can have many folders for all yours cameras, better to keep recordings in separate folders
-aws_s3_bucket_folder = 'camera1'
+aws_s3_bucket_folder = '68camera1'
 
 #camera name
-cam_name = 'cam1'
+cam_name = '68cam1'
 
 # application log folder
 log_folder = 'log/'
@@ -97,4 +97,7 @@ maxcputemp = 45.0
 fanpin = 17
 
 # gpio harware PIR sensor pin
-pirpin = 4
+pirpin = 23
+
+# green led pin
+ledpin = 24

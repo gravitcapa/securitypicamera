@@ -11,8 +11,10 @@ import shutil
 import logging
 from logging.handlers import TimedRotatingFileHandler
 from logging import handlers
-from gpiozero import CPUTemperature
 import cameraconfig
+from gpiozero import MotionSensor
+from gpiozero import OutputDevice
+from gpiozero import CPUTemperature
 
 w, h = cameraconfig.motion_detection_resolution
 prev = None
@@ -26,14 +28,33 @@ motionevents = 0
 currentfile = ''
 strdatetime = ''
 
+pirdetected = 0
+
 if __name__ == "__main__":
     strdatetime = datetime.now().strftime("%Y%m%d%H%M%S")
     logging.basicConfig(format='%(asctime)s.%(msecs)03d %(levelname)s %(message)s', datefmt='%Y-%m-%d %H:%M:%S', encoding='utf-8', level=logging.INFO)
     handler = TimedRotatingFileHandler(f"{cameraconfig.log_folder}camera.log", when="d", interval=1)
     handler.setFormatter(logging.Formatter('%(asctime)s.%(msecs)03d %(levelname)s %(message)s', datefmt='%Y-%m-%d %H:%M:%S'))
     logging.getLogger().addHandler(handler)
-
+ 
     logging.info(f"camera application started")
+    
+    # enable PIR
+    pir = MotionSensor(cameraconfig.pirpin)
+    
+    logging.info(f"PIR gpio pin: {cameraconfig.pirpin}")
+  
+    # enable green LED
+    led = OutputDevice(cameraconfig.ledpin)
+    led.on()
+        
+    logging.info(f"LED gpio pin: {cameraconfig.ledpin} status: {led.value}")
+    
+    # delete temp files in capture folder
+    for filename in os.listdir(cameraconfig.capture_folder):
+        file_path = os.path.join(cameraconfig.capture_folder, filename)
+        os.remove(file_path)
+        logging.info(f"deleted temp file: {file_path}")
 
     #enable os HDR
     os.system("v4l2-ctl --set-ctrl wide_dynamic_range=1 -d /dev/v4l-subdev0")
@@ -71,13 +92,14 @@ if __name__ == "__main__":
                         cpu = CPUTemperature()
                         if cpu.temperature is not None:
                             logging.info(f"CPU t: {cpu.temperature}")
+                        pirdetected = 0
                     else:
                         # stop mp4 encodig, motionevents represents the seconds count with motion detected
                         if time.time() - xtime > cameraconfig.maxrectimeseconds:
                             picam2.stop_encoder()
                             picam2.set_controls({"AeEnable": True, "AwbEnable": True, "FrameRate": cameraconfig.framerate})
                             encoding = False
-                            videofile = f"{cameraconfig.videos_folder}{strdatetime}-{cameraconfig.cam_name}-{motionevents}.mp4"
+                            videofile = f"{cameraconfig.videos_folder}{strdatetime}-{cameraconfig.cam_name}-{pirdetected}-{motionevents}.mp4"
                             shutil.move(currentfile, videofile)
                             logging.info(f"recording stopped, {currentfile} reached maxrectime:{cameraconfig.maxrectimeseconds} file moved to {videofile}")
            
@@ -113,7 +135,11 @@ if __name__ == "__main__":
                         if avgmse > 0.0 and mse >= triggermse and mse <= cameraconfig.maxmse:
                             motionevents += 1
                             logging.info(f"new movement detected. mse:{mse:.2f} avgmse: {avgmse:.2f} trmse:{triggermse:.2f} tlmse:{tolerancemse:.2f} events:{motionevents}")
-                                
+                            
+                    if pir.motion_detected:                        
+                        pirdetected = 1
+                        logging.info(f"new PIR movement detected")
+                        
                     prev = cur
                     time.sleep(1)
                 
