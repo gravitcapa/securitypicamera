@@ -26,9 +26,9 @@
 # open S3 bucket -> Management -> Lifecycle rules -> Create Lifecycle rule, specify name, check box expire current versions after X days, this will automaticaly delete old files after X days
 
 #AWS API your user access key
-aws_access_key_id = 'AKIAW66AMQNJ45CZ2XXL'
+aws_access_key_id = ''
 #AWS API your user secret
-aws_secret_access_key = 'IJN86HBCz3W9fWodHmASuwaxnOWDDxCTalwcLZjk'
+aws_secret_access_key = ''
 #AWS region
 aws_region = 'ca-central-1'
 #AWS S3 bucket, it's recomended to setup Lifecycle rules for a bucket with a automated cleanup after X days
