@@ -47,6 +47,10 @@ if __name__ == "__main__":
     # enable green LED
     led = OutputDevice(cameraconfig.ledpin)
     led.on()
+    
+    # initialize red pir LED
+    pirled = OutputDevice(cameraconfig.pirledpin)
+    pirled.off()
         
     logging.info(f"LED gpio pin: {cameraconfig.ledpin} status: {led.value}")
     
@@ -138,7 +142,10 @@ if __name__ == "__main__":
                             
                     if pir.motion_detected:                        
                         pirdetected = 1
+                        pirled.on()
                         logging.info(f"new PIR movement detected")
+                    else:
+                        pirled.off()
                         
                     prev = cur
                     time.sleep(1)
