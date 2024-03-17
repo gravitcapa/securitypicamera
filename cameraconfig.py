@@ -96,8 +96,11 @@ maxcputemp = 45.0
 # gpio fan pin
 fanpin = 17
 
+# green led pin
+ledpin = 23
+
 # gpio harware PIR sensor pin
 pirpin = 24
 
-# green led pin
-ledpin = 23
+# PIR led pin
+pirledpin = 26
