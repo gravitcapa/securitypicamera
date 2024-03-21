@@ -137,9 +137,7 @@ sudo dphys-swapfile swapon
 
 # Update PI
 
-sudo apt-get upgrade
-
-sudo apt-get update
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove
 
 # AWS S3 Cloud Storage Config
 
