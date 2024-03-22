@@ -86,7 +86,7 @@ sudo crontab -e
 
 0 * * * * cd /home/usr/camera/ && python3 cleanup.py
 
-0 0 * * * sudo reboot
+0 1 * * * sudo reboot
 
 # Fan:
 
