@@ -78,14 +78,12 @@ sudo reboot - daily
 
 sudo crontab -e
 
-@reboot cd /home/usr/camera/ && python3 fan.py
-
-@reboot cd /home/usr/camera/ && python3 camera.py
-
+@reboot cd /home/usr/camera/ && flock -n fan.lockfile python3 fan.py
+@reboot cd /home/usr/camera/ && flock -n camera.lockfile python3 camera.py
+*/5 * * * * cd /home/usr/camera/ && flock -n fan.lockfile python3 fan.py
+*/5 * * * * cd /home/usr/camera/ && flock -n camera.lockfile python3 camera.py
 */5 * * * * cd /home/usr/camera/ && python3 s3syncv2.py
-
 0 * * * * cd /home/usr/camera/ && python3 cleanup.py
-
 0 1 * * * sudo reboot
 
 # Fan:
